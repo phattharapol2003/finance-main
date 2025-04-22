@@ -3,9 +3,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import FinancePlaces from "./components/FinancePlaces";
-import { ThemeProvider } from "./components/ThemeContext";
-import Review from "./components/Review";
-import PlaceDetail from "./components/PlaceDetail";
+import { ThemeProvider } from "./components/FinanceContext";
+import FinanceReview from "./components/FinanceReview";
+import FinanceDetail from "./components/FinanceDetail";
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -16,13 +16,13 @@ export default function App() {
           <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="FinancePlaces" component={FinancePlaces} />
             <Stack.Screen
-              name="PlaceDetail"
-              component={PlaceDetail}
+              name="FinanceDetail"
+              component={FinanceDetail}
               options={{ headerShown: false }}
             />
             <Stack.Screen
-              name="Review"
-              component={Review}
+              name="FinanceReview"
+              component={FinanceReview}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>

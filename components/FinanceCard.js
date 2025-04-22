@@ -25,7 +25,7 @@ const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
   return R * c;
 };
 
-const PlaceCard = ({ data }) => {
+const FinanceCard = ({ data }) => {
   const navigation = useNavigation();
   const { name, status, rating, description, images } = data;
 
@@ -59,7 +59,7 @@ const PlaceCard = ({ data }) => {
   }, []);
 
   const handleExplore = () => {
-    navigation.navigate('PlaceDetail', { placeId: data.id });
+    navigation.navigate('FinanceDetail', { placeId: data.id });
   };
 
   return (
@@ -219,4 +219,4 @@ const styles = StyleSheet.create({
   
 });
 
-export default PlaceCard;
+export default FinanceCard;

@@ -9,10 +9,10 @@ import {
 } from 'react-native';
 import { AirbnbRating } from 'react-native-ratings';
 
-const Review = ({ route, navigation }) => {
+const FinanceReview = ({ route, navigation }) => {
   const { placeName } = route.params;
   const [rating, setRating] = useState(0);
-  const [reviewText, setReviewText] = useState('');
+  const [FinanceReviewText, setFinanceReviewText] = useState('');
   const [selectedDay, setSelectedDay] = useState('');
   const [selectedDuration, setSelectedDuration] = useState('');
 
@@ -20,11 +20,11 @@ const Review = ({ route, navigation }) => {
     console.log({
       placeName,
       rating,
-      reviewText,
+      FinanceReviewText,
       selectedDay,
       selectedDuration,
     });
-    navigation.goBack(); // หรือจะให้กลับไปหน้า PlaceDetail ก็ได้
+    navigation.goBack(); // หรือจะให้กลับไปหน้า FinanceDetail ก็ได้
   };
 
   return (
@@ -42,8 +42,8 @@ const Review = ({ route, navigation }) => {
       <TextInput
         style={styles.input}
         placeholder="บอกเล่าประสบการณ์ให้เราฟังหน่อย"
-        value={reviewText}
-        onChangeText={setReviewText}
+        value={FinanceReviewText}
+        onChangeText={setFinanceReviewText}
         multiline
       />
 
@@ -127,4 +127,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Review;
+export default FinanceReview;

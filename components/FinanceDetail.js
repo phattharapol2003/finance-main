@@ -9,7 +9,7 @@ import {
   Linking,
 } from "react-native";
 import { Icon } from "@rneui/themed";
-import { PLACES } from "../data/places";
+import { PLACES } from "../data/Moneyplaces";
 import * as Location from "expo-location";
 import MapView, { Marker, PROVIDER_DEFAULT } from "react-native-maps";
 import { Platform } from "react-native";
@@ -28,7 +28,7 @@ const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
   return R * c;
 };
 
-const PlaceDetail = ({ route, navigation }) => {
+const FinanceDetail = ({ route, navigation }) => {
   const { placeId } = route.params;
   const place = PLACES.find((p) => p.id === placeId);
   if (!place) {
@@ -93,10 +93,10 @@ const PlaceDetail = ({ route, navigation }) => {
       <View style={styles.headerBar}>
         <Text style={styles.headerText}>{place.name}</Text>
         <TouchableOpacity
-          style={styles.reviewButton}
-          onPress={() => navigation.navigate("Review", { placeId })}
+          style={styles.FinanceReviewButton}
+          onPress={() => navigation.navigate("FinanceReview", { placeId })}
         >
-          <Text style={styles.reviewButtonText}>รีวิว</Text>
+          <Text style={styles.FinanceReviewButtonText}>รีวิว</Text>
         </TouchableOpacity>
       </View>
 
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
     borderColor: "#eee",
   },
   headerText: { fontSize: 24, fontWeight: "bold", color: "#333" },
-  reviewButton: {
+  FinanceReviewButton: {
     backgroundColor: "#fff",
     paddingHorizontal: 16,
     paddingVertical: 6,
@@ -229,7 +229,7 @@ const styles = StyleSheet.create({
     borderColor: "#ccc",
     borderWidth: 1,
   },
-  reviewButtonText: { fontWeight: "bold", color: "#333" },
+  FinanceReviewButtonText: { fontWeight: "bold", color: "#333" },
   metaRow: {
     paddingHorizontal: 16,
     paddingTop: 16,
@@ -318,4 +318,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PlaceDetail;
+export default FinanceDetail;

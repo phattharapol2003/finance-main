@@ -1,7 +1,7 @@
 import React, { createContext, useState } from 'react';
 import { Text } from 'react-native';
 
-export const ThemeContext = createContext();
+export const FinanceContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
     const [theme, setTheme] = useState('light');
@@ -11,8 +11,8 @@ export const ThemeProvider = ({ children }) => {
     };
 
     return (
-        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <FinanceContext.Provider value={{ theme, toggleTheme }}>
             {typeof children === 'string' ? <Text>{children}</Text> : children}
-        </ThemeContext.Provider>
+        </FinanceContext.Provider>
     );
 };
